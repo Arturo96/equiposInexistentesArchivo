@@ -6,6 +6,8 @@ public class EquiposInexistentes {
 
     public static void main(String[] args) {
         
+        // Modifica la dirección donde se encuentra el archivo
+        
         String path = "C:\\archivosJava\\Equipos inexistentes.txt";
         
         File fileInput = new File(path);
