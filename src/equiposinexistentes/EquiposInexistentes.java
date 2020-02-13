@@ -1,14 +1,12 @@
 package equiposinexistentes;
 
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class EquiposInexistentes {
 
     public static void main(String[] args) {
         
-        String path = "C:\\archivosJava\\Equipos que ya no existen.txt";
+        String path = "C:\\archivosJava\\Equipos inexistentes.txt";
         
         File fileInput = new File(path);
         File fileOutput = new File("resultado.txt");
@@ -19,7 +17,7 @@ public class EquiposInexistentes {
             PrintWriter salida = new PrintWriter(new FileWriter(fileOutput));
             while(linea != null) {
                 if(linea.contains("Unable to resolve host")) {
-                    salida.println(linea.substring(66).replace("\"!", ""));
+                    salida.println(linea.substring(linea.indexOf("\"") + 1).replace("\"!", ""));
                 }
                 linea = entrada.readLine();
             }
